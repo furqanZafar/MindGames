@@ -13,6 +13,8 @@
 		D170587419A71BB300BB3F8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D170587319A71BB300BB3F8E /* Images.xcassets */; };
 		D170588019A71BB300BB3F8E /* MindGamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170587F19A71BB300BB3F8E /* MindGamesTests.swift */; };
 		D176627D19A77D9B00799329 /* innerShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D176627C19A77D9B00799329 /* innerShadow@2x.png */; };
+		D18E7E3E19A7B010006119BB /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E7E3D19A7B010006119BB /* Games.swift */; };
+		D18E7E4019A7B037006119BB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E7E3F19A7B037006119BB /* Utils.swift */; };
 		D1BDD43E19A7827C00702F50 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BDD43D19A7827C00702F50 /* Color.swift */; };
 		D1BDD44019A782C400702F50 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BDD43F19A782C400702F50 /* Tile.swift */; };
 		D1BDD44219A782DE00702F50 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BDD44119A782DE00702F50 /* Grid.swift */; };
@@ -39,6 +41,8 @@
 		D170587E19A71BB300BB3F8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D170587F19A71BB300BB3F8E /* MindGamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindGamesTests.swift; sourceTree = "<group>"; };
 		D176627C19A77D9B00799329 /* innerShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "innerShadow@2x.png"; sourceTree = "<group>"; };
+		D18E7E3D19A7B010006119BB /* Games.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
+		D18E7E3F19A7B037006119BB /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D1BDD43D19A7827C00702F50 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Resources/Color.swift; sourceTree = "<group>"; };
 		D1BDD43F19A782C400702F50 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		D1BDD44119A782DE00702F50 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
@@ -83,11 +87,11 @@
 		D170586619A71BB300BB3F8E /* MindGames */ = {
 			isa = PBXGroup;
 			children = (
+				D18E7E3A19A7AEB4006119BB /* ColorOfDeception */,
 				D170586919A71BB300BB3F8E /* AppDelegate.swift */,
 				D1BDD43D19A7827C00702F50 /* Color.swift */,
-				D1BDD44119A782DE00702F50 /* Grid.swift */,
-				D1BDD43F19A782C400702F50 /* Tile.swift */,
-				D170586E19A71BB300BB3F8E /* ViewController.swift */,
+				D18E7E3D19A7B010006119BB /* Games.swift */,
+				D18E7E3F19A7B037006119BB /* Utils.swift */,
 				D176627B19A77D9B00799329 /* Resources */,
 				D170586719A71BB300BB3F8E /* Supporting Files */,
 				D170587319A71BB300BB3F8E /* Images.xcassets */,
@@ -127,6 +131,16 @@
 				D176627C19A77D9B00799329 /* innerShadow@2x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D18E7E3A19A7AEB4006119BB /* ColorOfDeception */ = {
+			isa = PBXGroup;
+			children = (
+				D1BDD44119A782DE00702F50 /* Grid.swift */,
+				D1BDD43F19A782C400702F50 /* Tile.swift */,
+				D170586E19A71BB300BB3F8E /* ViewController.swift */,
+			);
+			name = ColorOfDeception;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +245,8 @@
 				D170586F19A71BB300BB3F8E /* ViewController.swift in Sources */,
 				D1BDD43E19A7827C00702F50 /* Color.swift in Sources */,
 				D1BDD44019A782C400702F50 /* Tile.swift in Sources */,
+				D18E7E3E19A7B010006119BB /* Games.swift in Sources */,
+				D18E7E4019A7B037006119BB /* Utils.swift in Sources */,
 				D170586A19A71BB300BB3F8E /* AppDelegate.swift in Sources */,
 				D170586D19A71BB300BB3F8E /* MindGames.xcdatamodeld in Sources */,
 				D1BDD44219A782DE00702F50 /* Grid.swift in Sources */,
