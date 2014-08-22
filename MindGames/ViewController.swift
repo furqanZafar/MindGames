@@ -23,7 +23,7 @@ func randN(max:Int, count:Int) -> Array<Int> {
 
 class Color: UIColor {
     
-    required init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -39,7 +39,7 @@ class Tile: UIView {
     var label:UILabel!
     var shadow:UIImageView!
     
-    required init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         return super.init(coder: aDecoder)
     }
     
@@ -118,7 +118,7 @@ class Grid: UIView {
     var colors:Array<(name:String, color:UIColor)>!
     var size:Int = 0
     
-    required init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         return super.init(coder: aDecoder)
     }
     
