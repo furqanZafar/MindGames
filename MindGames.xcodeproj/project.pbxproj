@@ -13,6 +13,7 @@
 		D170587219A71BB300BB3F8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D170587019A71BB300BB3F8E /* Main.storyboard */; };
 		D170587419A71BB300BB3F8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D170587319A71BB300BB3F8E /* Images.xcassets */; };
 		D170588019A71BB300BB3F8E /* MindGamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170587F19A71BB300BB3F8E /* MindGamesTests.swift */; };
+		D176627D19A77D9B00799329 /* innerShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D176627C19A77D9B00799329 /* innerShadow@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		D170587919A71BB300BB3F8E /* MindGamesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindGamesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D170587E19A71BB300BB3F8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D170587F19A71BB300BB3F8E /* MindGamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindGamesTests.swift; sourceTree = "<group>"; };
+		D176627C19A77D9B00799329 /* innerShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "innerShadow@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		D170586619A71BB300BB3F8E /* MindGames */ = {
 			isa = PBXGroup;
 			children = (
+				D176627B19A77D9B00799329 /* Resources */,
 				D170586919A71BB300BB3F8E /* AppDelegate.swift */,
 				D170586E19A71BB300BB3F8E /* ViewController.swift */,
 				D170587019A71BB300BB3F8E /* Main.storyboard */,
@@ -110,6 +113,14 @@
 				D170587E19A71BB300BB3F8E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D176627B19A77D9B00799329 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D176627C19A77D9B00799329 /* innerShadow@2x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D176627D19A77D9B00799329 /* innerShadow@2x.png in Resources */,
 				D170587219A71BB300BB3F8E /* Main.storyboard in Resources */,
 				D170587419A71BB300BB3F8E /* Images.xcassets in Resources */,
 			);

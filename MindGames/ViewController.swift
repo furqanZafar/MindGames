@@ -37,6 +37,7 @@ class Tile: UIView {
     
     var defective:Bool = false
     var label:UILabel!
+    var shadow:UIImageView!
     
     required init(coder aDecoder: NSCoder!) {
         return super.init(coder: aDecoder)
@@ -47,6 +48,13 @@ class Tile: UIView {
         super.init(frame: frame)
         
         self.layer.cornerRadius = 6
+        self.clipsToBounds = true
+        
+        shadow = UIImageView(frame: self.bounds)
+        shadow.alpha = 0.3
+        shadow.contentMode = UIViewContentMode.ScaleAspectFit
+        shadow.image = UIImage(named: "innerShadow")
+        self.addSubview(shadow)
         
         label = UILabel(frame: self.bounds)
         label.adjustsFontSizeToFitWidth = true
@@ -181,6 +189,7 @@ class Grid: UIView {
 
 class ViewController: UIViewController {
     
+    var fill:UIView!
     var grid:Grid!
     var timer:UILabel!
     var time:Int = 0
@@ -191,13 +200,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         viewport = UIScreen.mainScreen().bounds
+        view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.975)
         
-        timer = UILabel(frame: CGRectMake(0, 0, viewport.size.width, 64))
+        timer = UILabel(frame: CGRectMake(0, 0, viewport.size.width, 88))
+        timer.backgroundColor = Color(hue: 204, saturation: 69, brightness: 84, alpha: 0.4)
         timer.font = UIFont(name: "HelveticaNeue", size: 44)
         timer.text = "00"
         timer.textAlignment = NSTextAlignment.Center
         timer.textColor = UIColor.blackColor()
         view.addSubview(timer)
+        
+        var bar = UIView(frame: CGRectMake(0, timer.bounds.size.height, viewport.size.width, 4))
+        bar.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
+        view.addSubview(bar)
+        
+        fill = UIView(frame: CGRectMake(0, 0, 0, bar.bounds.size.height))
+        fill.backgroundColor = UIColor.greenColor()
+        bar.addSubview(fill)
         
         NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "onTick", userInfo: nil, repeats: true)
         
@@ -223,19 +242,26 @@ class ViewController: UIViewController {
         var tile = view.hitTest(tap.locationInView(tap.view), withEvent: nil) as? Tile
         
         if tile != nil {
+            
+            var frame = self.fill.frame
+            var score:CGFloat = (tile!.defective ? 1 : -1) * 20
+            frame.size.width = max(0, min(viewport.size.width, frame.size.width + score))
+            self.fill.frame = frame
+            
             if tile!.defective {
                 grid.refresh()
             }
+                
             else {
                 tile!.blink(0.2, speed: 0.04, accumalatedTime: 0, hide: true)
             }
+            
         }
         
     }
     
     func onTick() {
         time += 1
-        
         timer.text = (time < 10 ? "0" : "") + String(time)
     }
 
