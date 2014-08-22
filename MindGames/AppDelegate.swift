@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  MindGames
-//
-//  Created by Furqan Zafar on 8/22/14.
-//  Copyright (c) 2014 Furqan Zafar. All rights reserved.
-//
-
 import UIKit
 import CoreData
 

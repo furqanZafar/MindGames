@@ -10,10 +10,12 @@
 		D170586A19A71BB300BB3F8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170586919A71BB300BB3F8E /* AppDelegate.swift */; };
 		D170586D19A71BB300BB3F8E /* MindGames.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D170586B19A71BB300BB3F8E /* MindGames.xcdatamodeld */; };
 		D170586F19A71BB300BB3F8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170586E19A71BB300BB3F8E /* ViewController.swift */; };
-		D170587219A71BB300BB3F8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D170587019A71BB300BB3F8E /* Main.storyboard */; };
 		D170587419A71BB300BB3F8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D170587319A71BB300BB3F8E /* Images.xcassets */; };
 		D170588019A71BB300BB3F8E /* MindGamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170587F19A71BB300BB3F8E /* MindGamesTests.swift */; };
 		D176627D19A77D9B00799329 /* innerShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D176627C19A77D9B00799329 /* innerShadow@2x.png */; };
+		D1BDD43E19A7827C00702F50 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BDD43D19A7827C00702F50 /* Color.swift */; };
+		D1BDD44019A782C400702F50 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BDD43F19A782C400702F50 /* Tile.swift */; };
+		D1BDD44219A782DE00702F50 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BDD44119A782DE00702F50 /* Grid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,12 +34,14 @@
 		D170586919A71BB300BB3F8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D170586C19A71BB300BB3F8E /* MindGames.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MindGames.xcdatamodel; sourceTree = "<group>"; };
 		D170586E19A71BB300BB3F8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D170587119A71BB300BB3F8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D170587319A71BB300BB3F8E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D170587919A71BB300BB3F8E /* MindGamesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindGamesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D170587E19A71BB300BB3F8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D170587F19A71BB300BB3F8E /* MindGamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindGamesTests.swift; sourceTree = "<group>"; };
 		D176627C19A77D9B00799329 /* innerShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "innerShadow@2x.png"; sourceTree = "<group>"; };
+		D1BDD43D19A7827C00702F50 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Resources/Color.swift; sourceTree = "<group>"; };
+		D1BDD43F19A782C400702F50 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		D1BDD44119A782DE00702F50 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +83,15 @@
 		D170586619A71BB300BB3F8E /* MindGames */ = {
 			isa = PBXGroup;
 			children = (
-				D176627B19A77D9B00799329 /* Resources */,
 				D170586919A71BB300BB3F8E /* AppDelegate.swift */,
+				D1BDD43D19A7827C00702F50 /* Color.swift */,
+				D1BDD44119A782DE00702F50 /* Grid.swift */,
+				D1BDD43F19A782C400702F50 /* Tile.swift */,
 				D170586E19A71BB300BB3F8E /* ViewController.swift */,
-				D170587019A71BB300BB3F8E /* Main.storyboard */,
+				D176627B19A77D9B00799329 /* Resources */,
+				D170586719A71BB300BB3F8E /* Supporting Files */,
 				D170587319A71BB300BB3F8E /* Images.xcassets */,
 				D170586B19A71BB300BB3F8E /* MindGames.xcdatamodeld */,
-				D170586719A71BB300BB3F8E /* Supporting Files */,
 			);
 			path = MindGames;
 			sourceTree = "<group>";
@@ -204,7 +210,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D176627D19A77D9B00799329 /* innerShadow@2x.png in Resources */,
-				D170587219A71BB300BB3F8E /* Main.storyboard in Resources */,
 				D170587419A71BB300BB3F8E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,8 +229,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D170586F19A71BB300BB3F8E /* ViewController.swift in Sources */,
+				D1BDD43E19A7827C00702F50 /* Color.swift in Sources */,
+				D1BDD44019A782C400702F50 /* Tile.swift in Sources */,
 				D170586A19A71BB300BB3F8E /* AppDelegate.swift in Sources */,
 				D170586D19A71BB300BB3F8E /* MindGames.xcdatamodeld in Sources */,
+				D1BDD44219A782DE00702F50 /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,17 +254,6 @@
 			targetProxy = D170587A19A71BB300BB3F8E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		D170587019A71BB300BB3F8E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D170587119A71BB300BB3F8E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D170588119A71BB300BB3F8E /* Debug */ = {
