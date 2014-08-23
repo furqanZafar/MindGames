@@ -3,12 +3,16 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-                            
-    var window: UIWindow?
-
-
+    
+    var viewController:ColorOfDeception.ViewController!
+    var window: UIWindow!
+    
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
-        window!.rootViewController = ColorOfDeception.ViewController()
+        viewController = ColorOfDeception.ViewController()
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window.backgroundColor = UIColor.whiteColor()
+        window.rootViewController = viewController
+        window.makeKeyAndVisible()
         return true
     }
 

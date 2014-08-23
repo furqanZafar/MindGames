@@ -1,5 +1,9 @@
 import Foundation
 
+func clamp(n:Double, minimum:Double, maximum:Double) -> Double {
+    return max(min(n,maximum),minimum)
+}
+
 func randN(max:Int, count:Int) -> Array<Int> {
     
     var numbers:Array<Int> = []

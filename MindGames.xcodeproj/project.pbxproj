@@ -7,56 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D10C27E919A8C06600F5F2C6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C27E819A8C06600F5F2C6 /* Color.swift */; };
+		D10C27EB19A8C08800F5F2C6 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D10C27EA19A8C08800F5F2C6 /* star@2x.png */; };
+		D10C27EE19A8C0AC00F5F2C6 /* Stars.sks in Resources */ = {isa = PBXBuildFile; fileRef = D10C27EC19A8C0AC00F5F2C6 /* Stars.sks */; };
+		D10C27EF19A8C0AC00F5F2C6 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = D10C27ED19A8C0AC00F5F2C6 /* spark.png */; };
 		D170586A19A71BB300BB3F8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170586919A71BB300BB3F8E /* AppDelegate.swift */; };
 		D170586D19A71BB300BB3F8E /* MindGames.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D170586B19A71BB300BB3F8E /* MindGames.xcdatamodeld */; };
 		D170586F19A71BB300BB3F8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170586E19A71BB300BB3F8E /* ViewController.swift */; };
 		D170587419A71BB300BB3F8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D170587319A71BB300BB3F8E /* Images.xcassets */; };
-		D170588019A71BB300BB3F8E /* MindGamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170587F19A71BB300BB3F8E /* MindGamesTests.swift */; };
 		D176627D19A77D9B00799329 /* innerShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D176627C19A77D9B00799329 /* innerShadow@2x.png */; };
+		D18A8AEC19A87A600045A675 /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18A8AEB19A87A600045A675 /* DisplayLink.swift */; };
 		D18E7E3E19A7B010006119BB /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E7E3D19A7B010006119BB /* Games.swift */; };
 		D18E7E4019A7B037006119BB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E7E3F19A7B037006119BB /* Utils.swift */; };
-		D1BDD43E19A7827C00702F50 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BDD43D19A7827C00702F50 /* Color.swift */; };
 		D1BDD44019A782C400702F50 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BDD43F19A782C400702F50 /* Tile.swift */; };
 		D1BDD44219A782DE00702F50 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BDD44119A782DE00702F50 /* Grid.swift */; };
+		D1D86F7D19A871790020776D /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D86F7C19A871790020776D /* Clock.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		D170587A19A71BB300BB3F8E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D170585C19A71BB300BB3F8E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D170586319A71BB300BB3F8E;
-			remoteInfo = MindGames;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		D10C27E819A8C06600F5F2C6 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		D10C27EA19A8C08800F5F2C6 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
+		D10C27EC19A8C0AC00F5F2C6 /* Stars.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Stars.sks; sourceTree = "<group>"; };
+		D10C27ED19A8C0AC00F5F2C6 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		D10C27F019A8C30300F5F2C6 /* SpriteKit.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SpriteKit.playground; sourceTree = "<group>"; };
 		D170586419A71BB300BB3F8E /* MindGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D170586819A71BB300BB3F8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D170586919A71BB300BB3F8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D170586C19A71BB300BB3F8E /* MindGames.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MindGames.xcdatamodel; sourceTree = "<group>"; };
 		D170586E19A71BB300BB3F8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D170587319A71BB300BB3F8E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D170587919A71BB300BB3F8E /* MindGamesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindGamesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D170587E19A71BB300BB3F8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D170587F19A71BB300BB3F8E /* MindGamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindGamesTests.swift; sourceTree = "<group>"; };
 		D176627C19A77D9B00799329 /* innerShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "innerShadow@2x.png"; sourceTree = "<group>"; };
+		D18A8AEB19A87A600045A675 /* DisplayLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayLink.swift; sourceTree = "<group>"; };
 		D18E7E3D19A7B010006119BB /* Games.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 		D18E7E3F19A7B037006119BB /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		D1BDD43D19A7827C00702F50 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = Resources/Color.swift; sourceTree = "<group>"; };
 		D1BDD43F19A782C400702F50 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		D1BDD44119A782DE00702F50 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		D1D86F7C19A871790020776D /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D170586119A71BB300BB3F8E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D170587619A71BB300BB3F8E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -70,7 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				D170586619A71BB300BB3F8E /* MindGames */,
-				D170587C19A71BB300BB3F8E /* MindGamesTests */,
 				D170586519A71BB300BB3F8E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				D170586419A71BB300BB3F8E /* MindGames.app */,
-				D170587919A71BB300BB3F8E /* MindGamesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,13 +77,18 @@
 			children = (
 				D18E7E3A19A7AEB4006119BB /* ColorOfDeception */,
 				D170586919A71BB300BB3F8E /* AppDelegate.swift */,
-				D1BDD43D19A7827C00702F50 /* Color.swift */,
+				D10C27E819A8C06600F5F2C6 /* Color.swift */,
+				D1D86F7C19A871790020776D /* Clock.swift */,
+				D18A8AEB19A87A600045A675 /* DisplayLink.swift */,
 				D18E7E3D19A7B010006119BB /* Games.swift */,
 				D18E7E3F19A7B037006119BB /* Utils.swift */,
+				D10C27EC19A8C0AC00F5F2C6 /* Stars.sks */,
+				D10C27ED19A8C0AC00F5F2C6 /* spark.png */,
 				D176627B19A77D9B00799329 /* Resources */,
 				D170586719A71BB300BB3F8E /* Supporting Files */,
 				D170587319A71BB300BB3F8E /* Images.xcassets */,
 				D170586B19A71BB300BB3F8E /* MindGames.xcdatamodeld */,
+				D10C27F019A8C30300F5F2C6 /* SpriteKit.playground */,
 			);
 			path = MindGames;
 			sourceTree = "<group>";
@@ -108,27 +101,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D170587C19A71BB300BB3F8E /* MindGamesTests */ = {
-			isa = PBXGroup;
-			children = (
-				D170587F19A71BB300BB3F8E /* MindGamesTests.swift */,
-				D170587D19A71BB300BB3F8E /* Supporting Files */,
-			);
-			path = MindGamesTests;
-			sourceTree = "<group>";
-		};
-		D170587D19A71BB300BB3F8E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D170587E19A71BB300BB3F8E /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		D176627B19A77D9B00799329 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				D176627C19A77D9B00799329 /* innerShadow@2x.png */,
+				D10C27EA19A8C08800F5F2C6 /* star@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -163,24 +140,6 @@
 			productReference = D170586419A71BB300BB3F8E /* MindGames.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D170587819A71BB300BB3F8E /* MindGamesTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D170588619A71BB300BB3F8E /* Build configuration list for PBXNativeTarget "MindGamesTests" */;
-			buildPhases = (
-				D170587519A71BB300BB3F8E /* Sources */,
-				D170587619A71BB300BB3F8E /* Frameworks */,
-				D170587719A71BB300BB3F8E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D170587B19A71BB300BB3F8E /* PBXTargetDependency */,
-			);
-			name = MindGamesTests;
-			productName = MindGamesTests;
-			productReference = D170587919A71BB300BB3F8E /* MindGamesTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -192,10 +151,6 @@
 				TargetAttributes = {
 					D170586319A71BB300BB3F8E = {
 						CreatedOnToolsVersion = 6.0;
-					};
-					D170587819A71BB300BB3F8E = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = D170586319A71BB300BB3F8E;
 					};
 				};
 			};
@@ -213,7 +168,6 @@
 			projectRoot = "";
 			targets = (
 				D170586319A71BB300BB3F8E /* MindGames */,
-				D170587819A71BB300BB3F8E /* MindGamesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -223,15 +177,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D10C27EF19A8C0AC00F5F2C6 /* spark.png in Resources */,
+				D10C27EB19A8C08800F5F2C6 /* star@2x.png in Resources */,
+				D10C27EE19A8C0AC00F5F2C6 /* Stars.sks in Resources */,
 				D176627D19A77D9B00799329 /* innerShadow@2x.png in Resources */,
 				D170587419A71BB300BB3F8E /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D170587719A71BB300BB3F8E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,9 +192,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D18A8AEC19A87A600045A675 /* DisplayLink.swift in Sources */,
 				D170586F19A71BB300BB3F8E /* ViewController.swift in Sources */,
-				D1BDD43E19A7827C00702F50 /* Color.swift in Sources */,
 				D1BDD44019A782C400702F50 /* Tile.swift in Sources */,
+				D10C27E919A8C06600F5F2C6 /* Color.swift in Sources */,
+				D1D86F7D19A871790020776D /* Clock.swift in Sources */,
 				D18E7E3E19A7B010006119BB /* Games.swift in Sources */,
 				D18E7E4019A7B037006119BB /* Utils.swift in Sources */,
 				D170586A19A71BB300BB3F8E /* AppDelegate.swift in Sources */,
@@ -253,23 +205,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D170587519A71BB300BB3F8E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D170588019A71BB300BB3F8E /* MindGamesTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D170587B19A71BB300BB3F8E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D170586319A71BB300BB3F8E /* MindGames */;
-			targetProxy = D170587A19A71BB300BB3F8E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D170588119A71BB300BB3F8E /* Debug */ = {
@@ -375,40 +311,6 @@
 			};
 			name = Release;
 		};
-		D170588719A71BB300BB3F8E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MindGamesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MindGames.app/MindGames";
-			};
-			name = Debug;
-		};
-		D170588819A71BB300BB3F8E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MindGamesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MindGames.app/MindGames";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -426,15 +328,6 @@
 			buildConfigurations = (
 				D170588419A71BB300BB3F8E /* Debug */,
 				D170588519A71BB300BB3F8E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D170588619A71BB300BB3F8E /* Build configuration list for PBXNativeTarget "MindGamesTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D170588719A71BB300BB3F8E /* Debug */,
-				D170588819A71BB300BB3F8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
