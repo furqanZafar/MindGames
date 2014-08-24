@@ -1,85 +1,96 @@
+import Foundation
 import UIKit
+import SpriteKit
 
-extension ColorOfDeception {
-
-    class ViewController: UIViewController {
+class HelloScene: SKScene {
+    
+    var contentCreated:Bool = false
+    var emitter:SKEmitterNode!
+    
+    override func didMoveToView(view: SKView!) {
         
-        var clock:Clock!
-        var grid:ColorOfDeception.Grid!
-        var score:Double = 0
-        var scoreLabel:UILabel!
-        var scoreLink:DisplayLink!
-        var viewport:CGRect!
-        
-        override func viewDidLoad() {
-            
-            super.viewDidLoad()
-            
-            viewport = UIScreen.mainScreen().bounds
-            view.backgroundColor = UIColor.whiteColor()
-
-            scoreLabel = UILabel(frame: CGRectMake(8, 8, viewport.size.width, 24))
-            scoreLabel.font = UIFont(name: "AvenirNext-Medium", size: 14)
-            scoreLabel.text = "0"
-            view.addSubview(scoreLabel)
-            
-            clock = Clock(frame: CGRectMake(viewport.size.width - 32, 8, 24, 24), color: (0,0,0), minAlpha: 0.2, maxAlpha: 0.5)
-            clock.animateWithDuration(30)
-            view.addSubview(clock)
-
-            grid = ColorOfDeception.Grid(minSize: 2, maxSize: 4, minTileSize: 50, maxTileSize: 100, colors: [
-                (name:"Red", color:Color(hue: 335, saturation: 67, brightness: 91, alpha: 1)),
-                (name:"Yellow", color:Color(hue: 41, saturation: 100, brightness: 97, alpha: 1)),
-                (name:"Green", color:Color(hue: 111, saturation: 51, brightness: 60, alpha: 1)),
-                (name:"Blue", color:Color(hue: 204, saturation: 69, brightness: 84, alpha: 1)),
-                (name:"White", color:UIColor.whiteColor()),
-                (name:"Black", color:UIColor.blackColor())
-            ])
-            grid.setSize(2)
-            grid.refresh()
-            grid.center = CGPointMake(viewport.size.width / 2, viewport.size.height / 2)
-            view.addSubview(grid)
-            
-            view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onTap:"))
-            
+        if contentCreated {
+            return
         }
         
-        func setScore(score:Double) {
-            var deltaScore = (score - self.score)
-            scoreLink = DisplayLink(
-                duration: 0.4,
-                onChange: {
-                    (l:DisplayLink) in
-                    self.scoreLabel.text = String(Int(self.score + (deltaScore * l.p)))
-                    return
-                },
-                onComplete: {
-                    (l:DisplayLink) in
-                    self.score = score
-                }
-            )
-        }
+        self.createContent()
         
-        func onTap(tap:UITapGestureRecognizer) {
-            
-            var tile = view.hitTest(tap.locationInView(tap.view), withEvent: nil) as? ColorOfDeception.Tile
-            
-            if tile != nil {
-                
-                if tile!.defective {
-                    grid.refresh()
-                    self.setScore(score + 800)
-                }
-                    
-                else {
-                    tile!.blink(0.2, speed: 0.04, accumalatedTime: 0, hide: true)
-                    self.setScore(score - 200)
-                }
-                
-            }
-            
-        }
-
     }
+    
+    func createContent() {
+        
+        self.backgroundColor = SKColor.blackColor()
+        
+        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "spawnParticles:", userInfo: ["xOffset":CGFloat(-120), "count": CGFloat(5)], repeats: false)
+        
+        // var sprite = SKSpriteNode(color: SKColor.redColor(), size: CGSizeMake(88, 88))
+        // sprite.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        // self.addChild(sprite)
+        
+    }
+    
+    
+    func spawnParticles(timer:NSTimer) {
+        var args:Dictionary<String, CGFloat> = timer.userInfo as Dictionary<String,CGFloat>
+        if args["count"]! == 0 {
+            return
+        }
+        emitter = SKEmitterNode()
+        emitter.emissionAngle = 0
+        emitter.emissionAngleRange = CGFloat(M_PI) * 2
+        emitter.numParticlesToEmit = 20
+        emitter.particleAlpha = 0.8
+        emitter.particleAlphaRange = 0
+        emitter.particleAlphaSpeed = -0.4
+        emitter.particleBirthRate = 60
+        emitter.particleBlendMode = SKBlendMode.Add
+        emitter.particleColor = SKColor.whiteColor()
+        emitter.particleColorBlendFactor = 0.5
+        emitter.particleColorBlendFactorRange = 0.3
+        emitter.particleColorBlendFactorSpeed = 0.2
+        emitter.particleColorSequence = SKKeyframeSequence(
+            keyframeValues: [SKColor(red: 1, green: 0, blue: 1, alpha: 1), SKColor(red: 1, green: 0, blue: 0, alpha: 1)],
+            times: [0.0, 1.0]
+        )
+        emitter.particleLifetime = 2
+        emitter.particlePosition = CGPointMake(0, 0)
+        emitter.particleRotation = 0
+        emitter.particleRotationRange = CGFloat(M_PI) * 2
+        emitter.particleRotationSpeed = CGFloat(M_PI) / 12
+        emitter.particleScale = 0.3
+        emitter.particleScaleRange = 0.1
+        emitter.particleScaleSpeed = 0.1
+        emitter.particleSpeed = 50
+        emitter.particleSpeedRange = 100
+        emitter.particleTexture = SKTexture(imageNamed: "star")
+        emitter.position = CGPointMake(args["xOffset"]! + CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        emitter.xAcceleration = 0
+        emitter.yAcceleration = -100
+        self.addChild(emitter)
+        NSTimer.scheduledTimerWithTimeInterval(0, target: self, selector: "spawnParticles:", userInfo: ["xOffset": args["xOffset"]! + 48, "count": args["count"]! - 1.0], repeats: false)
+    }
+    
+}
 
+class ViewController:UIViewController {
+
+    var spriteKitScene:HelloScene!
+    var spriteKitView:SKView!
+    var viewport:CGRect!
+    
+    override func viewDidLoad() {
+        
+        viewport = UIScreen.mainScreen().bounds
+        
+        spriteKitView = SKView(frame: viewport)
+        spriteKitView.showsFPS = true
+        spriteKitView.showsNodeCount = true
+        
+        spriteKitScene = HelloScene(size: CGSizeMake(viewport.size.width, viewport.size.height))
+        spriteKitView.presentScene(spriteKitScene)
+        
+        view.addSubview(spriteKitView)
+        
+    }
+    
 }
