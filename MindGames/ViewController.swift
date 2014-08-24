@@ -21,7 +21,7 @@ class HelloScene: SKScene {
         
         self.backgroundColor = SKColor.blackColor()
         
-        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "spawnParticles:", userInfo: ["xOffset":CGFloat(-120), "count": CGFloat(5)], repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "spawnParticles:", userInfo: ["xOffset":CGFloat(0), "count": CGFloat(10)], repeats: false)
         
         // var sprite = SKSpriteNode(color: SKColor.redColor(), size: CGSizeMake(88, 88))
         // sprite.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
@@ -65,9 +65,9 @@ class HelloScene: SKScene {
         emitter.particleTexture = SKTexture(imageNamed: "star")
         emitter.position = CGPointMake(args["xOffset"]! + CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         emitter.xAcceleration = 0
-        emitter.yAcceleration = -100
+        emitter.yAcceleration = -10
         self.addChild(emitter)
-        NSTimer.scheduledTimerWithTimeInterval(0, target: self, selector: "spawnParticles:", userInfo: ["xOffset": args["xOffset"]! + 48, "count": args["count"]! - 1.0], repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(0, target: self, selector: "spawnParticles:", userInfo: ["xOffset": args["xOffset"]! + 0, "count": args["count"]! - 1.0], repeats: false)
     }
     
 }
