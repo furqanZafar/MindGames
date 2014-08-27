@@ -2,15 +2,6 @@ import Foundation
 import UIKit
 import SpriteKit
 
-class GridModel: NSObject {
-    
-    var rows:Int!
-    var columns:Int!
-    var characters:[String]!
-    var answers:[String]!
-    
-}
-
 class Tile: SKNode {
     
     var active:Bool = false
@@ -57,50 +48,17 @@ class Tile: SKNode {
         activationIndex = -1
     }
     
-    
-    
 }
 
-class Grid: SKNode {
+class Scene1: SKScene {
     
-    var model:GridModel!
-    var width:CGFloat!
-    var height:CGFloat!
-    var word:String = ""
-    
-    init(width:CGFloat, height:CGFloat) {
-        super.init()
-        self.width = width
-        self.height = height
-    }
-
-    func setCenter(x:CGFloat, y:CGFloat) {
-        self.position = CGPointMake(x - self.width / 2, y - self.height / 2)
-    }
-    
-    func setModel(model:GridModel) {
-        
-        self.model = model
-        
-        var tileWidth = self.width / CGFloat(model.rows)
-        var tileHeight = self.height / CGFloat(model.columns)
-        
-        for var i = 0; i < model.rows; i++ {
-            for var j = 0; j < model.columns; j++ {
-                var index:Int = (i * model.rows) + j
-                var character = model.characters[index]
-                var tile = Tile(size: CGSizeMake(tileWidth, tileHeight))
-                tile.label.text = character.uppercaseString
-                tile.position = CGPointMake(CGFloat(j) * tileWidth, CGFloat(i) * tileHeight)
-                self.addChild(tile)
-            }
-        }
-        
-    }
+    var answers:[String] = ["calm"]
+    var contentCreated:Bool = false
+    var emitter:SKEmitterNode!
+    var word:String = "calm"
     
     func activateTileFromPoint(location:CGPoint) {
-        for var i:Int = 0; i < self.children.count; i++ {
-            var tile = self.children[i] as Tile
+        for tile in getAllTiles() {
             if tile.containsPoint(location) && !tile.active {
                 tile.activate()
                 tile.activationIndex = countElements(word)
@@ -109,121 +67,9 @@ class Grid: SKNode {
         }
     }
     
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
-        word = ""
-        var touch = touches.allObjects[0] as UITouch
-        self.activateTileFromPoint(touch.locationInNode(self))
-    }
-    
-    override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
-        var touch = touches.allObjects[0] as UITouch
-        self.activateTileFromPoint(touch.locationInNode(self))
-    }
-    
-    override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
-        var valid = find(model.answers, word) != nil
-        var notification = NSNotification(name: "wordComposed", object: nil, userInfo: ["valid": valid, "word": word])
-        NSNotificationCenter.defaultCenter().postNotification(notification)
-    }
-    
-    override func touchesCancelled(touches: NSSet!, withEvent event: UIEvent!) {
-        
-    }
-    
-    func getActiveTiles() -> [Tile] {
-        return self.children.filter { (o:AnyObject) -> Bool in
-            if let tile = o as? Tile {
-                return tile.active
-            }
-            return false
-        } as [Tile]
-    }
-    
-    func deactivateTiles() {
-        for tile:Tile in self.getActiveTiles() {
-            tile.deactivate()
-        }
-    }
-    
-}
-
-class HelloScene: SKScene {
-    
-    var contentCreated:Bool = false
-    var emitter:SKEmitterNode!
-    var grid:Grid!
-    
-    override func didMoveToView(view: SKView!) {
-        
-        if contentCreated {
-            return
-        }
-        
-        self.createContent()
-        
-    }
-    
     func createContent() {
-        
         self.backgroundColor = SKColor.blackColor()
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onWordComposed:", name: "wordComposed", object: nil)
-        
-        var gridModel = GridModel()
-        gridModel.rows = 3
-        gridModel.columns = 3
-        gridModel.characters = ["t", "l", "a", "k", "s", "b", "c", "d", "e"]
-        gridModel.answers = ["talk", "klat"]
-        
-        grid = Grid(width: 320, height: 320)
-        grid.setModel(gridModel)
-        grid.setCenter(CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
-        grid.userInteractionEnabled = true
-        
-        self.addChild(grid)
-        
-    }
-    
-    func spawnParticles() {
-        var userInfo = ["x": 0, "y": 145, "xOffset": 30, "count": 4, "distance": 44, "delay": 0.1]
-        NSTimer.scheduledTimerWithTimeInterval(0, target: self, selector: "createEmitter:", userInfo: userInfo,repeats: false)
-    }
-    
-    func onWordComposed(notification:NSNotification) {
-        
-        var args = notification.userInfo as Dictionary<String, AnyObject>
-        var word = args["word"]! as String
-        var valid = args["valid"]! as Bool
-        
-        if !valid {
-            self.grid.deactivateTiles()
-            return
-        }
-        
-        var tiles = self.grid.getActiveTiles()
-        
-        for tile:Tile in tiles {
-            
-            var scale:CGFloat = 0.3
-            
-            var seconds = (Double(tile.activationIndex) / Double(tiles.count)) * 0.4
-            var delay = SKAction.waitForDuration(seconds)
-            
-            var move = SKAction.moveTo(CGPointMake(CGFloat(tile.activationIndex) * scale * tile.size.width, 0), duration: 0.4)
-            move.timingMode = SKActionTimingMode.EaseOut
-            
-            var scaleAction = SKAction.scaleBy(scale, duration: 0.4)
-            scaleAction.timingMode = SKActionTimingMode.EaseOut
-            
-            var moveAndScale = SKAction.sequence([delay, SKAction.group([move, scaleAction])])
-            tile.runAction(moveAndScale, completion: tile.activationIndex == (tiles.count - 1) ? spawnParticles : nil)
-            
-        }
-        
+        createGrid(320, height: 320, rows: 2, columns: 2, characters: ["c", "a", "l", "m"])
     }
     
     func createEmitter(timer:NSTimer) {
@@ -259,7 +105,7 @@ class HelloScene: SKScene {
         emitter.particleSpeed = 50
         emitter.particleSpeedRange = 100
         emitter.particleTexture = SKTexture(imageNamed: "star")
-        emitter.position = CGPointMake(args["x"]! + args["xOffset"]!, args["y"]!)
+        emitter.position = CGPointMake(args["x"]!, args["y"]!)
         emitter.xAcceleration = 0
         emitter.yAcceleration = -100
         self.addChild(emitter)
@@ -269,22 +115,274 @@ class HelloScene: SKScene {
             target: self,
             selector: "createEmitter:",
             userInfo: [
+                "count": args["count"]! - 1.0,
                 "delay": args["delay"]!,
-                "x": args["x"]!,
-                "y": args["y"]!,
-                "xOffset": args["xOffset"]! + args["distance"]!,
                 "distance": args["distance"]!,
-                "count": args["count"]! - 1.0
+                "x": args["x"]! + args["distance"]!,
+                "y": args["y"]!
             ],
             repeats: false
         )
     }
     
+    func createGrid(width:CGFloat, height:CGFloat, rows:Int, columns:Int, characters:[String]) {
+        
+        var tileWidth = width / CGFloat(rows)
+        var tileHeight = height / CGFloat(columns)
+        
+        for var i = 0; i < rows; i++ {
+            for var j = 0; j < columns; j++ {
+                var index:Int = (i * rows) + j
+                var character = characters[index]
+                var tile = Tile(size: CGSizeMake(tileWidth, tileHeight))
+                tile.label.text = character.uppercaseString
+                tile.position = CGPointMake(CGFloat(j) * tileWidth, CGFloat(i) * tileHeight)
+                addChild(tile)
+            }
+        }
+        
+    }
+    
+    func deactivateTiles() {
+        for tile in getActiveTiles() {
+            tile.deactivate()
+        }
+    }
+    
+    func getActiveTiles() -> [Tile] {
+        return getAllTiles().filter({
+            (tile:Tile) in
+            return tile.active
+        })
+    }
+    
+    func getAllTiles() -> [Tile] {
+        return children.filter {
+            (node:AnyObject) in
+            if let tile = node as? Tile {
+                return true
+            }
+            return false
+        } as [Tile]
+    }
+    
+    func spawnParticles(x:CGFloat, y:CGFloat, count:Int, delay:Double, distance:CGFloat) {
+        var userInfo = [
+            "count": count,
+            "delay": delay,
+            "distance": distance,
+            "x": x,
+            "y": y
+        ]
+        NSTimer.scheduledTimerWithTimeInterval(0, target: self, selector: "createEmitter:", userInfo: userInfo,repeats: false)
+    }
+    
+    func onWordComposed(valid:Bool) {
+        
+        if !valid {
+            deactivateTiles()
+            return
+        }
+        
+        var tiles = getActiveTiles()
+        
+        for tile:Tile in tiles {
+            
+            var scale:CGFloat = 0.3
+            
+            var seconds = (Double(tile.activationIndex) / Double(tiles.count)) * 0.4
+            var delay = SKAction.waitForDuration(seconds)
+            
+            var move = SKAction.moveTo(CGPointMake(CGFloat(tile.activationIndex) * scale * tile.size.width, 0), duration: 0.4)
+            move.timingMode = SKActionTimingMode.EaseOut
+            
+            var scaleAction = SKAction.scaleBy(scale, duration: 0.4)
+            scaleAction.timingMode = SKActionTimingMode.EaseOut
+            
+            var moveAndScale = SKAction.sequence([delay, SKAction.group([move, scaleAction])])
+            tile.runAction(moveAndScale, completion: tile.activationIndex == (tiles.count - 1) ? {self.spawnParticles(20, y:20, count:5, delay:0.0, distance:50)} : nil)
+            
+        }
+        
+    }
+    
+    override func didMoveToView(view: SKView!) {
+        
+        if contentCreated {
+            return
+        }
+        
+        self.createContent()
+        
+    }
+    
+    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+        word = ""
+        var touch = touches.allObjects[0] as UITouch
+        self.activateTileFromPoint(touch.locationInNode(self))
+    }
+    
+    override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
+        var touch = touches.allObjects[0] as UITouch
+        self.activateTileFromPoint(touch.locationInNode(self))
+    }
+    
+    override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
+        onWordComposed(find(answers, word) != nil)
+    }
+    
+    override func touchesCancelled(touches: NSSet!, withEvent event: UIEvent!) {
+        
+    }
+    
 }
+
+class Scene2: SKScene {
+    
+    var locationOnPanBegan:CGPoint!
+    var locationOnPanChanged:CGPoint!
+    var directionIndicator:SKShapeNode!
+    var selectedPlayer:SKSpriteNode!
+    var limitedVelocityVector:CGVector!
+    
+    func createPlayer(image:String) -> SKSpriteNode {
+        
+        var player = SKSpriteNode(texture: SKTexture(imageNamed: image), size: CGSizeMake(50, 50))
+        player.physicsBody = SKPhysicsBody(circleOfRadius: 25)
+        player.physicsBody.affectedByGravity = false
+        player.physicsBody.angularDamping = 1
+        player.physicsBody.friction = 1
+        player.physicsBody.linearDamping = 1
+        player.physicsBody.mass = 10
+        player.physicsBody.restitution = 0.4
+        player.name = "player"
+        return player
+        
+    }
+    
+    func createBall() -> SKSpriteNode {
+        
+        var ball = SKSpriteNode(texture: SKTexture(imageNamed: "ball"), size: CGSizeMake(18, 18))
+        ball.physicsBody = SKPhysicsBody(circleOfRadius: 9)
+        ball.physicsBody.affectedByGravity = false
+        ball.physicsBody.angularDamping = 1
+        ball.physicsBody.linearDamping = 0.5
+        ball.physicsBody.mass = 1
+        ball.physicsBody.restitution = 0.6
+        ball.name = "ball"
+        return ball
+        
+    }
+    
+    override func didMoveToView(view: SKView!) {
+        
+        backgroundColor = SKColor.blackColor()
+        physicsBody = SKPhysicsBody(edgeLoopFromRect: frame)
+        
+        var player = createPlayer("blue")
+        player.position = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame) + 100)
+        addChild(player)
+        
+        player = createPlayer("blue")
+        player.position = CGPointMake(CGRectGetMidX(frame) - 100, CGRectGetMidY(frame) + 160)
+        addChild(player)
+        
+        player = createPlayer("blue")
+        player.position = CGPointMake(CGRectGetMidX(frame) + 100, CGRectGetMidY(frame) + 160)
+        addChild(player)
+        
+        player = createPlayer("red")
+        player.position = CGPointMake(CGRectGetMidX(frame) - 100, CGRectGetMidY(frame) - 100)
+        addChild(player)
+        
+        player = createPlayer("red")
+        player.position = CGPointMake(CGRectGetMidX(frame) + 100, CGRectGetMidY(frame) - 100)
+        addChild(player)
+        
+        player = createPlayer("red")
+        player.position = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame) - 160)
+        addChild(player)
+        
+        var ball = createBall()
+        ball.position = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame))
+        addChild(ball)
+        
+        directionIndicator = SKShapeNode()
+        directionIndicator.fillColor = SKColor.clearColor()
+        directionIndicator.strokeColor = SKColor.whiteColor()
+        addChild(directionIndicator)
+        
+    }
+    
+    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+        
+        selectedPlayer = nil
+        
+        var touch = touches.allObjects[0] as UITouch
+        locationOnPanBegan = touch.locationInNode(self)
+        
+        if let node = nodeAtPoint(locationOnPanBegan) {
+            if let sprite = node as? SKSpriteNode {
+                if sprite.name == "player" {
+                    selectedPlayer = sprite
+                }
+            }
+        }
+        
+    }
+    
+    override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
+        
+        if selectedPlayer == nil {
+            return
+        }
+        
+        var touch = touches.allObjects[0] as UITouch
+        locationOnPanChanged = touch.locationInNode(self)
+        
+        var velocityVector = CGVectorMake(locationOnPanBegan.x - locationOnPanChanged.x, locationOnPanBegan.y - locationOnPanChanged.y)
+        var velocityMagnitude = sqrt(pow(velocityVector.dx, 2) + pow(velocityVector.dy, 2))
+        var velocityDirection = CGVectorMake(velocityVector.dx / velocityMagnitude, velocityVector.dy / velocityMagnitude)
+        var limitedVelocityMagnitude = min(150, velocityMagnitude)
+        limitedVelocityVector = CGVectorMake(velocityDirection.dx * limitedVelocityMagnitude, velocityDirection.dy * limitedVelocityMagnitude)
+        
+        var path = CGPathCreateMutable()
+        CGPathMoveToPoint(path, nil, locationOnPanBegan.x, locationOnPanBegan.y)
+        CGPathAddLineToPoint(path, nil, locationOnPanBegan.x + limitedVelocityVector.dx, locationOnPanBegan.y + limitedVelocityVector.dy)
+        var circle = CGPathCreateWithEllipseInRect(
+            CGRectMake(
+                locationOnPanBegan.x - limitedVelocityMagnitude,
+                locationOnPanBegan.y - limitedVelocityMagnitude,
+                limitedVelocityMagnitude * 2,
+                limitedVelocityMagnitude * 2
+            ), nil
+        )
+        CGPathAddPath(path, nil, circle)
+        directionIndicator.path = path
+        
+    }
+    
+    override func touchesCancelled(touches: NSSet!, withEvent event: UIEvent!) {
+        
+    }
+    
+    override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
+        
+        if selectedPlayer == nil {
+            return
+        }
+        
+        selectedPlayer.physicsBody.velocity = CGVectorMake(limitedVelocityVector.dx * 5, limitedVelocityVector.dy * 5)
+        directionIndicator.path = CGPathCreateMutable()
+        
+    }
+    
+}
+
 
 class ViewController:UIViewController {
 
-    var spriteKitScene:HelloScene!
+    var spriteKitScene:Scene2!
     var spriteKitView:SKView!
     var viewport:CGRect!
     
@@ -296,7 +394,7 @@ class ViewController:UIViewController {
         spriteKitView.showsFPS = true
         spriteKitView.showsNodeCount = true
         
-        spriteKitScene = HelloScene(size: CGSizeMake(viewport.size.width, viewport.size.height))
+        spriteKitScene = Scene2(size: CGSizeMake(viewport.size.width, viewport.size.height))
         spriteKitView.presentScene(spriteKitScene)
         
         view.addSubview(spriteKitView)
