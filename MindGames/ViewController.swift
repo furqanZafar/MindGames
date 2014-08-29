@@ -237,152 +237,9 @@ class Scene1: SKScene {
     
 }
 
-class Scene2: SKScene {
-    
-    var locationOnPanBegan:CGPoint!
-    var locationOnPanChanged:CGPoint!
-    var directionIndicator:SKShapeNode!
-    var selectedPlayer:SKSpriteNode!
-    var limitedVelocityVector:CGVector!
-    
-    func createPlayer(image:String) -> SKSpriteNode {
-        
-        var player = SKSpriteNode(texture: SKTexture(imageNamed: image), size: CGSizeMake(50, 50))
-        player.physicsBody = SKPhysicsBody(circleOfRadius: 25)
-        player.physicsBody.affectedByGravity = false
-        player.physicsBody.angularDamping = 1
-        player.physicsBody.friction = 1
-        player.physicsBody.linearDamping = 1
-        player.physicsBody.mass = 10
-        player.physicsBody.restitution = 0.4
-        player.name = "player"
-        return player
-        
-    }
-    
-    func createBall() -> SKSpriteNode {
-        
-        var ball = SKSpriteNode(texture: SKTexture(imageNamed: "ball"), size: CGSizeMake(18, 18))
-        ball.physicsBody = SKPhysicsBody(circleOfRadius: 9)
-        ball.physicsBody.affectedByGravity = false
-        ball.physicsBody.angularDamping = 1
-        ball.physicsBody.linearDamping = 0.5
-        ball.physicsBody.mass = 1
-        ball.physicsBody.restitution = 0.6
-        ball.name = "ball"
-        return ball
-        
-    }
-    
-    override func didMoveToView(view: SKView!) {
-        
-        backgroundColor = SKColor.blackColor()
-        physicsBody = SKPhysicsBody(edgeLoopFromRect: frame)
-        
-        var player = createPlayer("blue")
-        player.position = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame) + 100)
-        addChild(player)
-        
-        player = createPlayer("blue")
-        player.position = CGPointMake(CGRectGetMidX(frame) - 100, CGRectGetMidY(frame) + 160)
-        addChild(player)
-        
-        player = createPlayer("blue")
-        player.position = CGPointMake(CGRectGetMidX(frame) + 100, CGRectGetMidY(frame) + 160)
-        addChild(player)
-        
-        player = createPlayer("red")
-        player.position = CGPointMake(CGRectGetMidX(frame) - 100, CGRectGetMidY(frame) - 100)
-        addChild(player)
-        
-        player = createPlayer("red")
-        player.position = CGPointMake(CGRectGetMidX(frame) + 100, CGRectGetMidY(frame) - 100)
-        addChild(player)
-        
-        player = createPlayer("red")
-        player.position = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame) - 160)
-        addChild(player)
-        
-        var ball = createBall()
-        ball.position = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame))
-        addChild(ball)
-        
-        directionIndicator = SKShapeNode()
-        directionIndicator.fillColor = SKColor.clearColor()
-        directionIndicator.strokeColor = SKColor.whiteColor()
-        addChild(directionIndicator)
-        
-    }
-    
-    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
-        
-        selectedPlayer = nil
-        
-        var touch = touches.allObjects[0] as UITouch
-        locationOnPanBegan = touch.locationInNode(self)
-        
-        if let node = nodeAtPoint(locationOnPanBegan) {
-            if let sprite = node as? SKSpriteNode {
-                if sprite.name == "player" {
-                    selectedPlayer = sprite
-                }
-            }
-        }
-        
-    }
-    
-    override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
-        
-        if selectedPlayer == nil {
-            return
-        }
-        
-        var touch = touches.allObjects[0] as UITouch
-        locationOnPanChanged = touch.locationInNode(self)
-        
-        var velocityVector = CGVectorMake(locationOnPanBegan.x - locationOnPanChanged.x, locationOnPanBegan.y - locationOnPanChanged.y)
-        var velocityMagnitude = sqrt(pow(velocityVector.dx, 2) + pow(velocityVector.dy, 2))
-        var velocityDirection = CGVectorMake(velocityVector.dx / velocityMagnitude, velocityVector.dy / velocityMagnitude)
-        var limitedVelocityMagnitude = min(150, velocityMagnitude)
-        limitedVelocityVector = CGVectorMake(velocityDirection.dx * limitedVelocityMagnitude, velocityDirection.dy * limitedVelocityMagnitude)
-        
-        var path = CGPathCreateMutable()
-        CGPathMoveToPoint(path, nil, locationOnPanBegan.x, locationOnPanBegan.y)
-        CGPathAddLineToPoint(path, nil, locationOnPanBegan.x + limitedVelocityVector.dx, locationOnPanBegan.y + limitedVelocityVector.dy)
-        var circle = CGPathCreateWithEllipseInRect(
-            CGRectMake(
-                locationOnPanBegan.x - limitedVelocityMagnitude,
-                locationOnPanBegan.y - limitedVelocityMagnitude,
-                limitedVelocityMagnitude * 2,
-                limitedVelocityMagnitude * 2
-            ), nil
-        )
-        CGPathAddPath(path, nil, circle)
-        directionIndicator.path = path
-        
-    }
-    
-    override func touchesCancelled(touches: NSSet!, withEvent event: UIEvent!) {
-        
-    }
-    
-    override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
-        
-        if selectedPlayer == nil {
-            return
-        }
-        
-        selectedPlayer.physicsBody.velocity = CGVectorMake(limitedVelocityVector.dx * 5, limitedVelocityVector.dy * 5)
-        directionIndicator.path = CGPathCreateMutable()
-        
-    }
-    
-}
-
-
 class ViewController:UIViewController {
 
-    var spriteKitScene:Scene2!
+    var spriteKitScene:Scene1!
     var spriteKitView:SKView!
     var viewport:CGRect!
     
@@ -394,7 +251,7 @@ class ViewController:UIViewController {
         spriteKitView.showsFPS = true
         spriteKitView.showsNodeCount = true
         
-        spriteKitScene = Scene2(size: CGSizeMake(viewport.size.width, viewport.size.height))
+        spriteKitScene = Scene1(size: CGSizeMake(viewport.size.width, viewport.size.height))
         spriteKitView.presentScene(spriteKitScene)
         
         view.addSubview(spriteKitView)
