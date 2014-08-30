@@ -64,7 +64,7 @@ class GTWHexagonView : UIView {
         var x = point.x - r/2
         var y = point.y - r/2
         
-        var rr = 0.75 * r
+        var rr = 0.6 * r
         
         return (x >= -1 * rr && x <= rr && y >= -1 * rr && y <= rr)
     }

@@ -68,18 +68,21 @@ class GTWTilesViewController : UIViewController {
     
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
         var point : CGPoint = touches.anyObject().locationInView(self.view)
-        var hex = self.view.hitTest(point, withEvent: event) as GTWHexagonView?
-        if hex != nil && hex!.preciseHitTest(CGPoint(x: point.x - hex!.frame.minX, y: point.y - hex!.frame.minY)) {
-            if hitCells.count > 1 && hitCells[hitCells.count - 2] == hex! {
-                hitCells[hitCells.count - 1].deHighlight()
-                hitCells = Array(hitCells[0 ... hitCells.count - 2])
-            }
-            else if hitCells.filter({h in h == hex!}).count == 0 {
-                hex!.highlight()
-                hitCells.append(hex!)
-                self.label.text = self.label.text + hex!.label.text
+        var hex = self.view.hitTest(point, withEvent: event)
+        if var hex = hex as? GTWHexagonView {
+            if hex.preciseHitTest(CGPoint(x: point.x - hex.frame.minX, y: point.y - hex.frame.minY)) {
+                if hitCells.count > 1 && hitCells[hitCells.count - 2] == hex {
+                    hitCells[hitCells.count - 1].deHighlight()
+                    hitCells = Array(hitCells[0 ... hitCells.count - 2])
+                }
+                else if hitCells.filter({h in h == hex}).count == 0 {
+                    hex.highlight()
+                    hitCells.append(hex)
+                    self.label.text = self.label.text + hex.label.text
+                }
             }
         }
+       
     }
     
     override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
