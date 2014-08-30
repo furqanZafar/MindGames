@@ -1,16 +1,22 @@
 import Foundation
 import UIKit
 
+func eat<T>(x: T) -> () {
+    return;
+}
+
 class GTWTilesViewController : UIViewController {
     
     var cols: Int!
     var rows: Int!
     var targetWord: String!
+    var wordSelected : (String) -> () = eat
 
-    func configure(cols: Int, rows: Int, word: String) -> GTWTilesViewController {
+    func configure(cols: Int, rows: Int, word: String, wordSelected: (String) -> ()) -> GTWTilesViewController {
         self.cols = cols
         self.rows = rows
         self.targetWord = word
+        self.wordSelected = wordSelected
         return self
     }
 
@@ -49,21 +55,12 @@ class GTWTilesViewController : UIViewController {
             self.view.addSubview(view)
             
         }
-        
-        var label = UILabel(frame: CGRectMake(0, 0, self.view.frame.width, 30))
-        label.text = ""
-        label.textAlignment = NSTextAlignment.Center
-        self.label = label
-        self.view.addSubview(label)
     }
-    
-    var label : UILabel!
     
     var hitCells : [GTWHexagonView] = []
     
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
         self.hitCells = []
-        self.label.text = ""
     }
     
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
@@ -78,8 +75,10 @@ class GTWTilesViewController : UIViewController {
                 else if hitCells.filter({h in h == hex}).count == 0 {
                     hex.highlight()
                     hitCells.append(hex)
-                    self.label.text = self.label.text + hex.label.text
                 }
+                
+                var word = hitCells.map({h in h.getLetter()}).reduce("", combine: +)
+                self.wordSelected(word)
             }
         }
        

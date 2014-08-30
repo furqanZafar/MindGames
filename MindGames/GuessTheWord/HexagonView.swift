@@ -37,6 +37,9 @@ class GTWHexagonView : UIView {
     func setLetter(letter: String) {
         self.label.text = letter
     }
+    func getLetter() -> String {
+        return self.label.text
+    }
     
     // \/ \/ \/ highlight \/ \/ \/
     var highlighted = false
