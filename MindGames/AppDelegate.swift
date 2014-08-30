@@ -4,11 +4,11 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var viewController:GuessTheNumber.ViewController!
+    var viewController:GuessTheWord.ViewController!
     var window: UIWindow!
     
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
-        viewController = GuessTheNumber.ViewController()
+        viewController = GuessTheWord.ViewController()
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window.backgroundColor = UIColor.whiteColor()
         window.rootViewController = viewController
