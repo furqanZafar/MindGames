@@ -1,58 +1,90 @@
 import Foundation
 import UIKit
 
-extension GuessTheWord {
-    class TilesViewController : UIViewController {
+class GTWTilesViewController : UIViewController {
+    
+    var cols: Int!
+    var rows: Int!
+    var targetWord: String!
+
+    func configure(cols: Int, rows: Int, word: String) -> GTWTilesViewController {
+        self.cols = cols
+        self.rows = rows
+        self.targetWord = word
+        return self
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = UIColor.blackColor()
+
+        var r = self.view.frame.width / CGFloat(self.cols) / 2.0
         
-        var cols: Int!
-        var rows: Int!
-        var targetWord: String!
-
-        func configure(cols: Int, rows: Int, word: String) -> TilesViewController {
-            self.cols = cols
-            self.rows = rows
-            self.targetWord = word
-            return self
+        //var r = CGFloat(100)/2
+        var x = CGFloat(sqrt(3.0)) * r / 2
+        var rows = self.rows
+        var cols = self.cols
+        
+        self.view.bounds = CGRectMake(0, 0, (2 * CGFloat(cols) + 1) * x, 2 * r + (CGFloat(rows) - 1) * 3/2 * r)
+        
+        var fx = { (col:Int, row:Int) in
+            (x - r) +
+                CGFloat(!even(row) ? (col - 1) * 2 : 2 * (col - 1) + 1) * x
         }
-
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            self.view.backgroundColor = UIColor.blackColor()
+        
+        var fy = { (col:Int, row:Int) in
+            1.5 * (CGFloat(row) - 1) * r
+        }
+        
+        
+        var map = GTWMap(cols: cols, rows: rows)
+        map.addWord(self.targetWord)
+        
+        for node in map.allNodes() {
+            var col = node.col
+            var row = node.row
+            var view = GTWHexagonView(frame: CGRectMake(fx(col,row), fy(col,row), r*2,r*2))
+            view.setLetter(node.letter)
             
-            var r = CGFloat(100)/2
-            var x = CGFloat(sqrt(3.0)) * r / 2
-            var rows = self.rows
-            var cols = self.cols
+            self.view.addSubview(view)
             
-            self.view.bounds = CGRectMake(0, 0, (2 * CGFloat(cols) + 1) * x, 2 * r + (CGFloat(rows) - 1) * 3/2 * r)
-            
-            var fx = { (col:Int, row:Int) in
-                (x - r) +
-                    CGFloat(!even(row) ? (col - 1) * 2 : 2 * (col - 1) + 1) * x
+        }
+        
+        var label = UILabel(frame: CGRectMake(0, 0, self.view.frame.width, 30))
+        label.text = ""
+        label.textAlignment = NSTextAlignment.Center
+        self.label = label
+        self.view.addSubview(label)
+    }
+    
+    var label : UILabel!
+    
+    var hitCells : [GTWHexagonView] = []
+    
+    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+        self.hitCells = []
+        self.label.text = ""
+    }
+    
+    override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
+        var point : CGPoint = touches.anyObject().locationInView(self.view)
+        var hex = self.view.hitTest(point, withEvent: event) as GTWHexagonView?
+        if hex != nil && hex!.preciseHitTest(CGPoint(x: point.x - hex!.frame.minX, y: point.y - hex!.frame.minY)) {
+            if hitCells.count > 1 && hitCells[hitCells.count - 2] == hex! {
+                hitCells[hitCells.count - 1].deHighlight()
+                hitCells = Array(hitCells[0 ... hitCells.count - 2])
             }
-            
-            var fy = { (col:Int, row:Int) in
-                1.5 * (CGFloat(row) - 1) * r
+            else if hitCells.filter({h in h == hex!}).count == 0 {
+                hex!.highlight()
+                hitCells.append(hex!)
+                self.label.text = self.label.text + hex!.label.text
             }
-            
-            
-            var map = Map(cols: cols, rows: rows)
-            map.addWord(self.targetWord)
-            
-            for node in map.allNodes() {
-                var col = node.col
-                var row = node.row
-                var view = HexagonView(frame: CGRectMake(fx(col,row), fy(col,row), r*2,r*2))
-                view.setLetter(node.letter)
-                
-                if node.occupied {
-                    view.hexagonBackgroundColor = UIColor.orangeColor()
-                    view.setNeedsDisplay()
-                }
-                
-                self.view.addSubview(view)
-                
-            }
+        }
+    }
+    
+    override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
+        for v in self.hitCells {
+            v.deHighlight()
         }
     }
 }
