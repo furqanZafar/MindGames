@@ -4,11 +4,11 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var viewController:ViewController!
+    var viewController:WordBrain.ViewController!
     var window: UIWindow!
     
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
-        viewController = ViewController()
+        viewController = WordBrain.ViewController()
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window.backgroundColor = UIColor.whiteColor()
         window.rootViewController = viewController

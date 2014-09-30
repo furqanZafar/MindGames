@@ -64,15 +64,15 @@ extension ColorOfDeception {
             UIView.animateWithDuration(0.075, animations: {self.transform = CGAffineTransformIdentity})
         }
         
-        override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+        override func touchesBegan(touches: NSSet?, withEvent event: UIEvent?) {
             expand()
         }
         
-        override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
+        override func touchesEnded(touches: NSSet?, withEvent event: UIEvent?) {
             contract()
         }
         
-        override func touchesCancelled(touches: NSSet!, withEvent event: UIEvent!) {
+        override func touchesCancelled(touches: NSSet?, withEvent event: UIEvent?) {
             contract()
         }
         

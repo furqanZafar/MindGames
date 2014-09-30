@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		D10C27E919A8C06600F5F2C6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C27E819A8C06600F5F2C6 /* Color.swift */; };
 		D10C27EB19A8C08800F5F2C6 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D10C27EA19A8C08800F5F2C6 /* star@2x.png */; };
+		D142967219DAE7720002ABF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D142967119DAE7720002ABF3 /* ViewController.swift */; };
+		D142967519DAE7B90002ABF3 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D142967319DAE7B90002ABF3 /* Scene.swift */; };
+		D142967619DAE7B90002ABF3 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D142967419DAE7B90002ABF3 /* Tile.swift */; };
 		D15AD01819A8E20B0011288F /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AD01519A8E20B0011288F /* Grid.swift */; };
 		D15AD01919A8E20B0011288F /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AD01619A8E20B0011288F /* Tile.swift */; };
 		D15AD01A19A8E20B0011288F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AD01719A8E20B0011288F /* ViewController.swift */; };
-		D15AD01C19A8E2130011288F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AD01B19A8E2130011288F /* ViewController.swift */; };
 		D170586A19A71BB300BB3F8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170586919A71BB300BB3F8E /* AppDelegate.swift */; };
 		D170586D19A71BB300BB3F8E /* MindGames.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D170586B19A71BB300BB3F8E /* MindGames.xcdatamodeld */; };
 		D170587419A71BB300BB3F8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D170587319A71BB300BB3F8E /* Images.xcassets */; };
@@ -20,20 +22,18 @@
 		D18A8AEC19A87A600045A675 /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18A8AEB19A87A600045A675 /* DisplayLink.swift */; };
 		D18E7E3E19A7B010006119BB /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E7E3D19A7B010006119BB /* Games.swift */; };
 		D18E7E4019A7B037006119BB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E7E3F19A7B037006119BB /* Utils.swift */; };
-		D1D2024D19AE29490039F599 /* square@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1D2024C19AE29490039F599 /* square@2x.png */; };
 		D1D86F7D19A871790020776D /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D86F7C19A871790020776D /* Clock.swift */; };
-		D1F703BC19AE5FEC00008940 /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F703BA19AE5FEC00008940 /* blue@2x.png */; };
-		D1F703BD19AE5FEC00008940 /* red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F703BB19AE5FEC00008940 /* red@2x.png */; };
-		D1F703BF19AE60EC00008940 /* ball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1F703BE19AE60EC00008940 /* ball@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D10C27E819A8C06600F5F2C6 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D10C27EA19A8C08800F5F2C6 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
+		D142967119DAE7720002ABF3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = WordBrain/ViewController.swift; sourceTree = "<group>"; };
+		D142967319DAE7B90002ABF3 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = WordBrain/Scene.swift; sourceTree = "<group>"; };
+		D142967419DAE7B90002ABF3 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = WordBrain/Tile.swift; sourceTree = "<group>"; };
 		D15AD01519A8E20B0011288F /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Grid.swift; path = ColorOfDeception/Grid.swift; sourceTree = "<group>"; };
 		D15AD01619A8E20B0011288F /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = ColorOfDeception/Tile.swift; sourceTree = "<group>"; };
 		D15AD01719A8E20B0011288F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ColorOfDeception/ViewController.swift; sourceTree = "<group>"; };
-		D15AD01B19A8E2130011288F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D170586419A71BB300BB3F8E /* MindGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D170586819A71BB300BB3F8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D170586919A71BB300BB3F8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,11 +44,7 @@
 		D18E7E3D19A7B010006119BB /* Games.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 		D18E7E3F19A7B037006119BB /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		D1AB457A19A9AF97003DA04F /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
-		D1D2024C19AE29490039F599 /* square@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "square@2x.png"; sourceTree = "<group>"; };
 		D1D86F7C19A871790020776D /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
-		D1F703BA19AE5FEC00008940 /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
-		D1F703BB19AE5FEC00008940 /* red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red@2x.png"; sourceTree = "<group>"; };
-		D1F703BE19AE60EC00008940 /* ball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ball@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +58,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D142966C19DAE6AE0002ABF3 /* WordBrain */ = {
+			isa = PBXGroup;
+			children = (
+				D142967319DAE7B90002ABF3 /* Scene.swift */,
+				D142967419DAE7B90002ABF3 /* Tile.swift */,
+				D142967119DAE7720002ABF3 /* ViewController.swift */,
+			);
+			name = WordBrain;
+			sourceTree = "<group>";
+		};
 		D170585B19A71BB300BB3F8E = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +87,7 @@
 		D170586619A71BB300BB3F8E /* MindGames */ = {
 			isa = PBXGroup;
 			children = (
+				D142966C19DAE6AE0002ABF3 /* WordBrain */,
 				D18E7E3A19A7AEB4006119BB /* ColorOfDeception */,
 				D170586919A71BB300BB3F8E /* AppDelegate.swift */,
 				D10C27E819A8C06600F5F2C6 /* Color.swift */,
@@ -88,7 +95,6 @@
 				D18A8AEB19A87A600045A675 /* DisplayLink.swift */,
 				D18E7E3D19A7B010006119BB /* Games.swift */,
 				D18E7E3F19A7B037006119BB /* Utils.swift */,
-				D15AD01B19A8E2130011288F /* ViewController.swift */,
 				D176627B19A77D9B00799329 /* Resources */,
 				D170586719A71BB300BB3F8E /* Supporting Files */,
 				D170587319A71BB300BB3F8E /* Images.xcassets */,
@@ -109,10 +115,6 @@
 		D176627B19A77D9B00799329 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D1F703BE19AE60EC00008940 /* ball@2x.png */,
-				D1F703BA19AE5FEC00008940 /* blue@2x.png */,
-				D1F703BB19AE5FEC00008940 /* red@2x.png */,
-				D1D2024C19AE29490039F599 /* square@2x.png */,
 				D176627C19A77D9B00799329 /* innerShadow@2x.png */,
 				D10C27EA19A8C08800F5F2C6 /* star@2x.png */,
 			);
@@ -186,13 +188,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1F703BC19AE5FEC00008940 /* blue@2x.png in Resources */,
-				D1F703BD19AE5FEC00008940 /* red@2x.png in Resources */,
 				D10C27EB19A8C08800F5F2C6 /* star@2x.png in Resources */,
 				D176627D19A77D9B00799329 /* innerShadow@2x.png in Resources */,
 				D170587419A71BB300BB3F8E /* Images.xcassets in Resources */,
-				D1D2024D19AE29490039F599 /* square@2x.png in Resources */,
-				D1F703BF19AE60EC00008940 /* ball@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,8 +204,10 @@
 				D15AD01A19A8E20B0011288F /* ViewController.swift in Sources */,
 				D18A8AEC19A87A600045A675 /* DisplayLink.swift in Sources */,
 				D10C27E919A8C06600F5F2C6 /* Color.swift in Sources */,
+				D142967619DAE7B90002ABF3 /* Tile.swift in Sources */,
+				D142967219DAE7720002ABF3 /* ViewController.swift in Sources */,
+				D142967519DAE7B90002ABF3 /* Scene.swift in Sources */,
 				D1D86F7D19A871790020776D /* Clock.swift in Sources */,
-				D15AD01C19A8E2130011288F /* ViewController.swift in Sources */,
 				D15AD01819A8E20B0011288F /* Grid.swift in Sources */,
 				D18E7E3E19A7B010006119BB /* Games.swift in Sources */,
 				D18E7E4019A7B037006119BB /* Utils.swift in Sources */,
