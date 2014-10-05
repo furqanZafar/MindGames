@@ -1,9 +1,9 @@
 import SpriteKit
 
-extension WordBrain {
-
+extension SpinCycle {
+    
     class ViewController:UIViewController {
-        
+
         var spriteKitView:SKView!
         var viewport:CGRect!
         
@@ -12,8 +12,6 @@ extension WordBrain {
             viewport = UIScreen.mainScreen().bounds
             
             spriteKitView = SKView(frame: viewport)
-            spriteKitView.showsFPS = true
-            spriteKitView.showsNodeCount = true
             view.addSubview(spriteKitView)
             
             spriteKitView.presentScene(Scene(size: CGSizeMake(viewport.size.width, viewport.size.height)))
@@ -21,5 +19,5 @@ extension WordBrain {
         }
         
     }
-
+    
 }

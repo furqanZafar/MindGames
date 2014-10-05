@@ -1,0 +1,93 @@
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" backgroundColor="#000000" width="88" height="88" currentTimeline="1" xflVersion="2.3" creatorInfo="Adobe Flash Professional CC" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 13.0 build 759" majorVersion="13" buildNumber="759" objectsSnapTo="false" viewAngle3D="9.5224348773737" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false">
+     <symbols>
+          <Include href="circle.xml" loadImmediate="false" itemID="5430e4de-00000131" lastModified="1412505228"/>
+          <Include href="hexagon.xml" loadImmediate="false" itemID="543016af-00000122" lastModified="1412505260"/>
+          <Include href="square.xml" loadImmediate="false" itemID="5430e485-0000012d" lastModified="1412505241"/>
+     </symbols>
+     <timelines>
+          <DOMTimeline name="Scene 1">
+               <layers>
+                    <DOMLayer name="Circle" color="#FF800A" locked="true" autoNamed="false" visible="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="circle" selected="true">
+                                             <matrix>
+                                                  <Matrix tx="44" ty="44"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                             <filters>
+                                                  <GlowFilter blurX="20" blurY="20" color="#FFFFFF" quality="3"/>
+                                             </filters>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="Square" color="#9933CC" autoNamed="false" visible="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="square">
+                                             <matrix>
+                                                  <Matrix a="0.758621215820312" d="0.758621215820312" tx="44" ty="44"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                             <filters>
+                                                  <GlowFilter blurX="20" blurY="20" color="#FFFFFF" quality="3"/>
+                                             </filters>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="Hexagon" color="#4F80FF" current="true" isSelected="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="hexagon" selected="true">
+                                             <matrix>
+                                                  <Matrix a="0.696090698242188" d="0.696090698242188" tx="44" ty="44"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                             <filters>
+                                                  <GlowFilter blurX="20" blurY="20" color="#FFFFFF" quality="3"/>
+                                             </filters>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+               </layers>
+          </DOMTimeline>
+     </timelines>
+     <PrinterSettings platform="macintosh"/>
+     <publishHistory>
+          <PublishItem publishSize="534" publishTime="1412505267"/>
+          <PublishItem publishSize="545" publishTime="1412505249"/>
+          <PublishItem publishSize="583" publishTime="1412505234"/>
+          <PublishItem publishSize="580" publishTime="1412505065"/>
+          <PublishItem publishSize="535" publishTime="1412505009"/>
+          <PublishItem publishSize="519" publishTime="1412504950"/>
+          <PublishItem publishSize="515" publishTime="1412504904"/>
+          <PublishItem publishSize="487" publishTime="1412504865"/>
+          <PublishItem publishSize="449" publishTime="1412504807"/>
+          <PublishItem publishSize="421" publishTime="1412504756"/>
+          <PublishItem publishSize="307" publishTime="1412503165"/>
+          <PublishItem publishSize="313" publishTime="1412503139"/>
+          <PublishItem publishSize="313" publishTime="1412503101"/>
+          <PublishItem publishSize="307" publishTime="1412490485"/>
+          <PublishItem publishSize="226" publishTime="1412490435"/>
+          <PublishItem publishSize="174" publishTime="1412438433"/>
+          <PublishItem publishSize="174" publishTime="1412438432"/>
+          <PublishItem publishSize="174" publishTime="1412438403"/>
+          <PublishItem publishSize="160" publishTime="1412438347"/>
+          <PublishItem publishSize="129" publishTime="1412437745"/>
+     </publishHistory>
+</DOMDocument>

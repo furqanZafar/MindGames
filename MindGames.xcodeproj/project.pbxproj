@@ -12,6 +12,8 @@
 		D142967219DAE7720002ABF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D142967119DAE7720002ABF3 /* ViewController.swift */; };
 		D142967519DAE7B90002ABF3 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D142967319DAE7B90002ABF3 /* Scene.swift */; };
 		D142967619DAE7B90002ABF3 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D142967419DAE7B90002ABF3 /* Tile.swift */; };
+		D142967919DAE8400002ABF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D142967819DAE8400002ABF3 /* ViewController.swift */; };
+		D142967B19DAE88D0002ABF3 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D142967A19DAE88D0002ABF3 /* Scene.swift */; };
 		D15AD01819A8E20B0011288F /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AD01519A8E20B0011288F /* Grid.swift */; };
 		D15AD01919A8E20B0011288F /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AD01619A8E20B0011288F /* Tile.swift */; };
 		D15AD01A19A8E20B0011288F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AD01719A8E20B0011288F /* ViewController.swift */; };
@@ -19,6 +21,16 @@
 		D170586D19A71BB300BB3F8E /* MindGames.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D170586B19A71BB300BB3F8E /* MindGames.xcdatamodeld */; };
 		D170587419A71BB300BB3F8E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D170587319A71BB300BB3F8E /* Images.xcassets */; };
 		D176627D19A77D9B00799329 /* innerShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D176627C19A77D9B00799329 /* innerShadow@2x.png */; };
+		D1888AA819E04E8800EB87A1 /* hexagon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1888AA719E04E8800EB87A1 /* hexagon@2x.png */; };
+		D1888AAB19E11C9D00EB87A1 /* circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1888AA919E11C9D00EB87A1 /* circle@2x.png */; };
+		D1888AAC19E11C9D00EB87A1 /* square@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1888AAA19E11C9D00EB87A1 /* square@2x.png */; };
+		D1888AAE19E1506000EB87A1 /* blueCrease@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1888AAD19E1506000EB87A1 /* blueCrease@2x.png */; };
+		D1888AB019E151FF00EB87A1 /* triangles@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1888AAF19E151FF00EB87A1 /* triangles@2x.png */; };
+		D1888AB219E1532100EB87A1 /* grunge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1888AB119E1532100EB87A1 /* grunge@2x.png */; };
+		D1888AB419E1726100EB87A1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1888AB319E1726100EB87A1 /* AudioToolbox.framework */; };
+		D1888AB819E1746700EB87A1 /* Constallation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1888AB719E1746700EB87A1 /* Constallation.swift */; };
+		D1888ABA19E1747900EB87A1 /* Satellite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1888AB919E1747900EB87A1 /* Satellite.swift */; };
+		D1888ABC19E174A600EB87A1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1888ABB19E174A600EB87A1 /* Question.swift */; };
 		D18A8AEC19A87A600045A675 /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18A8AEB19A87A600045A675 /* DisplayLink.swift */; };
 		D18E7E3E19A7B010006119BB /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E7E3D19A7B010006119BB /* Games.swift */; };
 		D18E7E4019A7B037006119BB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E7E3F19A7B037006119BB /* Utils.swift */; };
@@ -31,6 +43,8 @@
 		D142967119DAE7720002ABF3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = WordBrain/ViewController.swift; sourceTree = "<group>"; };
 		D142967319DAE7B90002ABF3 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = WordBrain/Scene.swift; sourceTree = "<group>"; };
 		D142967419DAE7B90002ABF3 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = WordBrain/Tile.swift; sourceTree = "<group>"; };
+		D142967819DAE8400002ABF3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SpinCycle/ViewController.swift; sourceTree = "<group>"; };
+		D142967A19DAE88D0002ABF3 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = Scene.swift; path = SpinCycle/Scene.swift; sourceTree = "<group>"; };
 		D15AD01519A8E20B0011288F /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Grid.swift; path = ColorOfDeception/Grid.swift; sourceTree = "<group>"; };
 		D15AD01619A8E20B0011288F /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tile.swift; path = ColorOfDeception/Tile.swift; sourceTree = "<group>"; };
 		D15AD01719A8E20B0011288F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ColorOfDeception/ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +54,16 @@
 		D170586C19A71BB300BB3F8E /* MindGames.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MindGames.xcdatamodel; sourceTree = "<group>"; };
 		D170587319A71BB300BB3F8E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D176627C19A77D9B00799329 /* innerShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "innerShadow@2x.png"; sourceTree = "<group>"; };
+		D1888AA719E04E8800EB87A1 /* hexagon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hexagon@2x.png"; sourceTree = "<group>"; };
+		D1888AA919E11C9D00EB87A1 /* circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circle@2x.png"; sourceTree = "<group>"; };
+		D1888AAA19E11C9D00EB87A1 /* square@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "square@2x.png"; sourceTree = "<group>"; };
+		D1888AAD19E1506000EB87A1 /* blueCrease@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueCrease@2x.png"; sourceTree = "<group>"; };
+		D1888AAF19E151FF00EB87A1 /* triangles@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triangles@2x.png"; sourceTree = "<group>"; };
+		D1888AB119E1532100EB87A1 /* grunge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grunge@2x.png"; sourceTree = "<group>"; };
+		D1888AB319E1726100EB87A1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D1888AB719E1746700EB87A1 /* Constallation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constallation.swift; sourceTree = "<group>"; };
+		D1888AB919E1747900EB87A1 /* Satellite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Satellite.swift; sourceTree = "<group>"; };
+		D1888ABB19E174A600EB87A1 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		D18A8AEB19A87A600045A675 /* DisplayLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayLink.swift; sourceTree = "<group>"; };
 		D18E7E3D19A7B010006119BB /* Games.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 		D18E7E3F19A7B037006119BB /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -52,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1888AB419E1726100EB87A1 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,9 +93,22 @@
 			name = WordBrain;
 			sourceTree = "<group>";
 		};
+		D142967719DAE8280002ABF3 /* SpinCycle */ = {
+			isa = PBXGroup;
+			children = (
+				D142967A19DAE88D0002ABF3 /* Scene.swift */,
+				D142967819DAE8400002ABF3 /* ViewController.swift */,
+				D1888AB719E1746700EB87A1 /* Constallation.swift */,
+				D1888AB919E1747900EB87A1 /* Satellite.swift */,
+				D1888ABB19E174A600EB87A1 /* Question.swift */,
+			);
+			name = SpinCycle;
+			sourceTree = "<group>";
+		};
 		D170585B19A71BB300BB3F8E = {
 			isa = PBXGroup;
 			children = (
+				D1888AB319E1726100EB87A1 /* AudioToolbox.framework */,
 				D170586619A71BB300BB3F8E /* MindGames */,
 				D170586519A71BB300BB3F8E /* Products */,
 			);
@@ -87,6 +125,7 @@
 		D170586619A71BB300BB3F8E /* MindGames */ = {
 			isa = PBXGroup;
 			children = (
+				D142967719DAE8280002ABF3 /* SpinCycle */,
 				D142966C19DAE6AE0002ABF3 /* WordBrain */,
 				D18E7E3A19A7AEB4006119BB /* ColorOfDeception */,
 				D170586919A71BB300BB3F8E /* AppDelegate.swift */,
@@ -115,7 +154,13 @@
 		D176627B19A77D9B00799329 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D1888AAF19E151FF00EB87A1 /* triangles@2x.png */,
+				D1888AB119E1532100EB87A1 /* grunge@2x.png */,
+				D1888AAD19E1506000EB87A1 /* blueCrease@2x.png */,
+				D1888AA919E11C9D00EB87A1 /* circle@2x.png */,
+				D1888AAA19E11C9D00EB87A1 /* square@2x.png */,
 				D176627C19A77D9B00799329 /* innerShadow@2x.png */,
+				D1888AA719E04E8800EB87A1 /* hexagon@2x.png */,
 				D10C27EA19A8C08800F5F2C6 /* star@2x.png */,
 			);
 			path = Resources;
@@ -188,8 +233,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1888AB219E1532100EB87A1 /* grunge@2x.png in Resources */,
 				D10C27EB19A8C08800F5F2C6 /* star@2x.png in Resources */,
+				D1888AAC19E11C9D00EB87A1 /* square@2x.png in Resources */,
+				D1888AAB19E11C9D00EB87A1 /* circle@2x.png in Resources */,
+				D1888AA819E04E8800EB87A1 /* hexagon@2x.png in Resources */,
+				D1888AAE19E1506000EB87A1 /* blueCrease@2x.png in Resources */,
 				D176627D19A77D9B00799329 /* innerShadow@2x.png in Resources */,
+				D1888AB019E151FF00EB87A1 /* triangles@2x.png in Resources */,
 				D170587419A71BB300BB3F8E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,16 +254,21 @@
 			files = (
 				D15AD01A19A8E20B0011288F /* ViewController.swift in Sources */,
 				D18A8AEC19A87A600045A675 /* DisplayLink.swift in Sources */,
+				D142967B19DAE88D0002ABF3 /* Scene.swift in Sources */,
+				D1888ABC19E174A600EB87A1 /* Question.swift in Sources */,
 				D10C27E919A8C06600F5F2C6 /* Color.swift in Sources */,
 				D142967619DAE7B90002ABF3 /* Tile.swift in Sources */,
+				D142967919DAE8400002ABF3 /* ViewController.swift in Sources */,
 				D142967219DAE7720002ABF3 /* ViewController.swift in Sources */,
 				D142967519DAE7B90002ABF3 /* Scene.swift in Sources */,
 				D1D86F7D19A871790020776D /* Clock.swift in Sources */,
+				D1888AB819E1746700EB87A1 /* Constallation.swift in Sources */,
 				D15AD01819A8E20B0011288F /* Grid.swift in Sources */,
 				D18E7E3E19A7B010006119BB /* Games.swift in Sources */,
 				D18E7E4019A7B037006119BB /* Utils.swift in Sources */,
 				D15AD01919A8E20B0011288F /* Tile.swift in Sources */,
 				D170586A19A71BB300BB3F8E /* AppDelegate.swift in Sources */,
+				D1888ABA19E1747900EB87A1 /* Satellite.swift in Sources */,
 				D170586D19A71BB300BB3F8E /* MindGames.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
